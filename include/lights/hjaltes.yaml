@@ -1,0 +1,16 @@
+- platform: nanoleaf
+  host: !secret NANOLEAF_IP
+  token: !secret NANOLEAF_TOKEN
+
+- platform: group
+  name: Hjaltes Loftslampe
+  entities:
+    - light.hjaltes_loftlampe_1
+    - light.hjaltes_loftlampe_2
+    - light.hjaltes_loftlampe_3
+
+- platform: group
+  name: Hjaltes værelse
+  entities:
+    - light.hjaltes_loftslampe
+    - light.nanoleaf

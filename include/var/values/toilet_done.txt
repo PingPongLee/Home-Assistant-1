@@ -1,0 +1,2 @@
+var.toilet_string
+Jeg er færdig

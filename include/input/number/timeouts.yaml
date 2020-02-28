@@ -1,0 +1,23 @@
+timeout_night:
+  name: Sluk glemt lys om natten efter
+  icon: mdi:timer
+  initial: 10
+  min: 1
+  max: 15
+  step: 1
+
+timeout_forgotten_light:
+  name: Sluk glemt lys efter
+  icon: mdi:timer
+  initial: 10
+  min: 1
+  max: 15
+  step: 1
+
+timeout_arrived_night:
+  name: Sluk lyset efter
+  icon: mdi:timer
+  initial: 5
+  min: 1
+  max: 15
+  step: 1

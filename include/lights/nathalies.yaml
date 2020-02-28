@@ -1,0 +1,16 @@
+- platform: switch
+  name: Nathalies Sengelamper
+  entity_id: switch.nathalies_sengelamper
+
+- platform: group
+  name: Nathalies Loftslamper
+  entities:
+    - light.nathalies_loftslampe_hoj
+    - light.nathalies_loftslampe_lav
+
+- platform: group
+  name: Nathalies værelse
+  entities:
+    - light.nathalies_sengelamper
+    - light.nathalies_loftslamper
+ 

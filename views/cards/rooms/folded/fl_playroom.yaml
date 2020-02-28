@@ -1,0 +1,21 @@
+title: Colin
+type: entities
+entities:
+  - type: custom:slider-entity-row
+    toggle: true
+    entity: light.uplight
+  - type: custom:fold-entity-row
+    head:
+      type: custom:slider-entity-row
+      toggle: true
+      entity: light.gulvlampe_i_legevaerselse
+    items:
+      - type: custom:slider-entity-row
+        toggle: true
+        entity: light.gulvlampe_overst
+      - type: custom:slider-entity-row
+        toggle: true
+        entity: light.gulvlampe_midt
+      - type: custom:slider-entity-row
+        toggle: true
+        entity: light.gulvlampe_nederst

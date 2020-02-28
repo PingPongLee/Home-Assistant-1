@@ -1,0 +1,104 @@
+flash_test:
+  alias: "Start"
+  sequence:
+    - service: script.flash_init
+      data:
+        entities:
+          - light.havegang_1
+          - light.havegang_2
+          - light.havegang_3
+          - light.havegang_4
+          - light.havegang_5
+          - light.havegang_6
+          - light.havegang_7
+          - light.havegang_8
+          - light.havegang_9
+          - light.havegang_10
+          - light.havegang_11
+        brightness: 255
+        delay: 1
+
+flash_init:
+  alias: "Flash init"
+  sequence:
+    - service: light.turn_off
+      data_template:
+        entity_id: >
+          {% for entity in entities %}
+          {{ entity }}
+          {%- if not loop.last %}, {% endif -%}
+          {%- endfor %}
+    - service: script.flash_light
+      data_template:
+        entities: >
+          {{ entities }}
+        brightness: "{{ brightness }}"
+        delay: "{{ delay }}"
+        idx: "0"
+
+flash_light:
+  alias: "Flash light"
+  sequence:
+    - service: system_log.write
+      data_template:
+        message: >
+          {%- set a_list = entities[1:-1] | replace("'", "") | replace(" ", "") -%}
+          {%- set entities = a_list.split(",") -%}
+          {%- set idx = idx | int -%}
+          {%- if idx + 1 == entities | length %}0{%- else -%}{{ idx + 1 }}{%- endif -%}
+
+    - service: light.turn_on
+      data_template:
+        entity_id: >
+          {%- set a_list = entities[1:-1] | replace("'", "") | replace(" ", "") -%}
+          {%- set entities = a_list.split(",") -%}
+          {%- set idx = idx | int -%}
+          {{ entities[idx] }}
+        brightness: >
+          {{ brightness | int }}
+    - delay:
+        seconds: >
+          {{ delay | int }}
+    - service: light.turn_off
+      data_template:
+        entity_id: >
+          {%- set a_list = entities[1:-1] | replace("'", "") | replace(" ", "") -%}
+          {%- set entities = a_list.split(",") -%}
+          {%- set idx = idx | int -%}
+          {{ entities[idx] }}
+    - service: script.flash_loop
+      data_template:
+        entities: >
+          {%- set a_list = entities[1:-1] | replace("'", "") | replace(" ", "") -%}
+          {%- set entities = a_list.split(",") -%}
+          {%- set idx = idx | int -%}
+          {{ entities }}
+        brightness: >
+          {{ brightness | int }}
+        delay: >
+          {{ delay | int }}
+        idx: >
+          {%- set a_list = entities[1:-1] | replace("'", "") | replace(" ", "") -%}
+          {%- set entities = a_list.split(",") -%}
+          {%- set idx = idx | int -%}
+          {%- if idx + 1 == entities | length %}0{%- else -%}{{ idx + 1 }}{%- endif -%}
+
+flash_loop:
+  alias: "Flash loop"
+  sequence:
+    - service: script.turn_off
+      data:
+        entity_id: script.flash_light
+    - service: script.flash_light
+      data_template:
+        entities: >
+          {%- set a_list = entities[1:-1] | replace("'", "") | replace(" ", "") -%}
+          {%- set entities = a_list.split(",") -%}
+          {%- set idx = idx | int -%}
+          {{ entities }}
+        brightness: >
+          {{ brightness | int }}
+        delay: >
+          {{ delay | int }}
+        idx: >
+          {{ idx | int }}

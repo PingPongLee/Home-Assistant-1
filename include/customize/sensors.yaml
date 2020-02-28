@@ -1,0 +1,15 @@
+sensor.bus_mod_odense:
+  icon: mdi:bus-clock
+sensor.bus_mod_faaborg:
+  icon: mdi:bus-clock
+
+sensor.affald_hentes:
+  icon: mdi:trash-can
+sensor.genbrug_hentes:
+  icon: mdi:recycle
+
+sensor.ferie:
+  unit_of_measurement:
+
+#sensor.jacob_fodselsdag:
+#  unit_of_measurement:

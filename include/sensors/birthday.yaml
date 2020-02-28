@@ -1,0 +1,34 @@
+- platform: template
+  sensors:
+    next_birthday:
+      # Update once a day
+      entity_id: sensor.date
+      friendly_name_template: >-
+        {% set ns = namespace(entity_id="", prev=1000) %}
+        {% for birthday in states.group.birthdays.attributes.entity_id -%}
+          {% if states(birthday) | int < ns.prev %}
+            {%- set ns.entity_id = birthday -%}
+            {%- set ns.prev = states(birthday) | int -%}
+          {% endif -%}
+        {% endfor %}
+        {{ state_attr(ns.entity_id, "friendly_name") }}
+      value_template: >-
+        {% set ns = namespace(entity_id="", prev=1000) %}
+        {% for birthday in states.group.birthdays.attributes.entity_id -%}
+          {% if states(birthday) | int < ns.prev %}
+            {%- set ns.entity_id = birthday -%}
+            {%- set ns.prev = states(birthday) | int -%}
+          {% endif -%}
+        {% endfor %}
+        {{ ns.prev }}
+      attribute_templates:
+        years_at_next_anniversary: >-
+          {% set ns = namespace(entity_id="", prev=1000) %}
+          {% for birthday in states.group.birthdays.attributes.entity_id -%}
+            {% if states(birthday) | int < ns.prev %}
+              {%- set ns.entity_id = birthday -%}
+              {%- set ns.prev = states(birthday) | int -%}
+            {% endif -%}
+          {% endfor %}
+          {{ state_attr(ns.entity_id, "years_at_next_anniversary") }}
+        hide_in_list: "true"

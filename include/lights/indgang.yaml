@@ -1,0 +1,26 @@
+- platform: switch
+  name: Lys over skabe, venstre
+  entity_id: switch.lys_over_skabe_venstre
+
+- platform: switch
+  name: Lys over skabe, højre
+  entity_id: switch.lys_over_skabe_hojre
+
+- platform: group
+  name: Lys over skabe
+  entities:
+    - light.lys_over_skabe_venstre
+    - light.lys_over_skabe_hojre
+
+- platform: group
+  name: Loftlampe i indgang
+  entities:
+    - light.indgang_1
+    - light.indgang_2
+    - light.indgang_3
+
+- platform: group
+  name: Indgang
+  entities:
+    - light.lys_over_skabe
+    - light.loftlampe_i_indgang

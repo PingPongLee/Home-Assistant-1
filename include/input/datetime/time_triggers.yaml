@@ -1,0 +1,70 @@
+# PATIO
+patio_off_time:
+  name: Hvornår skal lyset slukkes
+  icon: mdi:clock
+  has_date: false
+  has_time: true
+
+patio_morning_time:
+  name: Tænding af havegangen
+  icon: mdi:clock
+  initial: "06:00"
+  has_date: false
+  has_time: true
+
+patio_morning_duration:
+  name: Hvor lang tid skal lyset være tændt
+  icon: mdi:timer-sand
+  initial: "00:20"
+  has_date: false
+  has_time: true
+
+patio_timeout_day:
+  name: Timeout for hvornår lyset skal slukkes om dagen
+  icon: mdi:timer-sand
+  initial: "00:01"
+  has_date: false
+  has_time: true
+
+# DIMMING
+dim_time:
+  name: Dæmp lyset tidligst
+  icon: mdi:clock
+  has_date: false
+  has_time: true
+
+# NIGHT
+night_start_time:
+  name: Hvornår starter natten
+  icon: mdi:weather-sunset-down
+  has_date: false
+  has_time: true
+
+night_end_time:
+  name: Hvornår slutter natten
+  icon: mdi:clock
+  has_date: false
+  has_time: true
+
+# RESTART
+restart_time:
+  name: Genstart klokken
+  icon: mdi:restart
+  initial: "03:00"
+  has_date: false
+  has_time: true
+
+# EMILIO
+emilio_track_start:
+  name: Emilio fra
+  icon: mdi:clock
+  initial: "04:30"
+  has_date: false
+  has_time: true
+
+emilio_track_end:
+  name: Emilio til
+  icon: mdi:clock
+  initial: "08:00"
+  has_date: false
+  has_time: true

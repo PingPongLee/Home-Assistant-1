@@ -1,0 +1,34 @@
+title: Indgang
+type: entities
+show_header_toggle: false
+entities:
+  - type: custom:fold-entity-row
+    head:
+      entity: light.lys_over_skabe
+    entities:
+      - light.lys_over_skabe_venstre
+      - light.lys_over_skabe_hojre
+
+  - type: custom:fold-entity-row
+    head:
+      type: custom:slider-entity-row
+      name: Loftlampe
+      toggle: true
+      hide_state: true
+      entity: light.loftlampe_i_indgang
+    entities:
+      - type: custom:slider-entity-row
+        toggle: true
+        hide_state: true
+        entity: light.indgang_1
+        name: 1
+      - type: custom:slider-entity-row
+        toggle: true
+        hide_state: true
+        entity: light.indgang_2
+        name: 2
+      - type: custom:slider-entity-row
+        toggle: true
+        hide_state: true
+        entity: light.indgang_3
+        name: 3

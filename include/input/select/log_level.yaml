@@ -1,0 +1,5 @@
+log_level:
+  name: "Vælg log niveau"
+  icon: mdi:android-debug-bridge
+  options:
+    - DUMMY

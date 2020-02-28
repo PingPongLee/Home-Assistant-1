@@ -1,0 +1,4 @@
+type: custom:fold-entity-row
+head: automation.havegang_aftenlys
+entities:
+  - input_datetime.patio_off_time

@@ -1,0 +1,6 @@
+input_select.media_player
+Stuens TV
+Pigernes TV
+Cornelies TV
+Nathalies TV
+Home Mini Køkken

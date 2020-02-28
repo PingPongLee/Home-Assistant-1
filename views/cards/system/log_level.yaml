@@ -1,0 +1,5 @@
+type: entities
+title: Logger
+show_header_toggle: false
+entities:
+  - input_select.log_level

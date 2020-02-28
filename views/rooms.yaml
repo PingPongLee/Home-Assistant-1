@@ -1,0 +1,42 @@
+title: Lys
+icon: mdi:lightbulb-on
+panel: true
+cards:
+  - type: custom:layout-card
+    layout: horizontal
+    column_num: 1
+    max_columns: 1
+    max_width: [100%]
+    cards:
+      - type: horizontal-stack
+        cards:
+          - !include cards/rooms/buttons/bt_bathrooms.yaml
+          - !include cards/rooms/buttons/bt_hjalte.yaml
+          - !include cards/rooms/buttons/bt_colin.yaml
+          - !include cards/rooms/buttons/bt_nathalie.yaml
+          - type: horizontal-stack
+            cards:
+              - !include cards/rooms/buttons/bt_cornelie.yaml
+              - !include cards/rooms/buttons/bt_emilio.yaml
+#              - !include cards/rooms/buttons/bt_patio.yaml
+
+      - type: horizontal-stack
+        cards:
+          - !include cards/rooms/buttons/bt_kitchen.yaml
+          - type: horizontal-stack
+            cards:
+#              - !include cards/rooms/buttons/bt_patio.yaml
+              - !include cards/rooms/buttons/bt_playroom.yaml
+              - !include cards/rooms/buttons/bt_bathrooms.yaml
+              - !include cards/rooms/buttons/bt_entrance.yaml
+              - !include cards/rooms/buttons/bt_hall.yaml
+
+      - type: horizontal-stack
+        cards:
+          - type: horizontal-stack
+            cards:
+              - !include cards/rooms/buttons/bt_entrance.yaml
+              - !include cards/rooms/buttons/bt_emilio.yaml
+          - type: horizontal-stack
+            cards:
+              - !include cards/rooms/buttons/bt_livingroom.yaml

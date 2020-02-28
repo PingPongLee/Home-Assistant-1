@@ -1,0 +1,10 @@
+restart_docker:
+  name: Genstart Containers
+  icon: mdi:power-cycle
+
+  entities:
+    - script.restart_ha_main
+    - script.restart_ha_slave
+    - script.restart_dockermon
+    - script.restart_nginx
+    - script.restart_portainer

@@ -1,0 +1,3 @@
+touchscreen_off: "source /config/custom_components/shell/tools.sh; screen_toggle off"
+touchscreen_on: "source /config/custom_components/shell/tools.sh; screen_toggle on"
+touchscreen_suspend: "source /config/custom_components/shell/tools.sh; screen_suspend"

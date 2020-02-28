@@ -1,0 +1,3 @@
+type: iframe
+url: https://embed.windy.com/embed2.html?lat=56.047&lon=10.942&zoom=6&level=surface&overlay=temp&menu=&message=true&marker=&calendar=now&pressure=&type=map&location=coordinates&detail=&detailLat=55.207&detailLon=10.261&metricWind=m%2Fs&metricTemp==%C2%B0C&radarRange=-1
+aspect_ratio: 70.1%

@@ -1,0 +1,57 @@
+# Clear the list of movies and call the reload shell
+refresh_movies:
+  alias: "Genindlæs film"
+  sequence:
+    - service: input_select.set_options
+      data:
+        entity_id: input_select.movie
+        options: "Henter film... "
+    - service: shell_command.movies_load_movies
+    - service: shell_command.movies_load_covers
+
+# Fetch the covers from IMDb, sorry...
+refresh_covers:
+  alias: "Genindlæs covers"
+  sequence:
+    - service: shell_command.movies_load_covers
+
+# Toggle script for play/pause movie
+play_pause_movie:
+  alias: "Start/Pause film"
+  sequence:
+    - service_template: >-
+        {%- if is_state("media_player.stuens_tv", "off") or is_state("media_player.stuens_tv", "idle") -%}
+          script.play_movie
+        {%- elif is_state("media_player.stuens_tv", "playing") or is_state("media_player.stuens_tv", "paused") -%}
+          script.pause_movie
+        {%- endif -%}
+
+# Play the movie
+play_movie:
+  alias: "Start afspilning"
+  sequence:
+    - service: media_player.play_media
+      # Work: Dynamic media_player
+      # Work: Server as variable
+      data_template:
+        entity_id: media_player.stuens_tv
+        media_content_id: "http://192.168.0.10/MyWeb/video/Film/Dansk tale/{{- states('input_select.movie_url') -}}"
+        media_content_type: video
+
+# Pause the movie
+pause_movie:
+  alias: "Pause/Play"
+  sequence:
+    - service: media_player.media_play_pause
+      # Work: Dynamic media_player
+      data:
+        entity_id: media_player.stuens_tv
+
+# End movie
+stop_movie:
+  alias: "stop afspilning"
+  sequence:
+    - service: media_player.media_stop
+      # Work: Dynamic media_player
+      data:
+        entity_id: media_player.stuens_tv

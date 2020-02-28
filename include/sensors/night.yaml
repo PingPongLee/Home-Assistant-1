@@ -1,0 +1,22 @@
+- platform: template
+  sensors:
+    night:
+      friendly_name: "Det er nat"
+      value_template: >-
+        {% if
+            state_attr('sun.sun', 'elevation') <= (0 - states('input_number.sun_elevation_light') | float )
+            and
+            (
+              states('sensor.time') >= (state_attr("input_datetime.dim_time", "timestamp") | int | timestamp_custom('%H:%M', false))
+              or
+              states('sensor.time') <= "12:00"
+            )
+        %}
+          on
+        {% elif
+          state_attr('sun.sun', 'elevation') > (states('input_number.sun_elevation_light') | float )
+          or
+          states('sensor.time') <= (state_attr("input_datetime.dim_time", "timestamp") | int | timestamp_custom('%H:%M', false))
+        %}
+          off
+        {% endif %}

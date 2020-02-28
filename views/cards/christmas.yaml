@@ -1,0 +1,19 @@
+type: picture-elements
+image: /local/images/backgrounds/christmas.jpg
+elements:
+  - type: custom:text-element
+    text: "Dage til jul"
+    style:
+      top: 33%
+      left: 50%
+      font-size: 2vw
+      color: black
+  - type: state-label
+    entity: sensor.dage_til_jul
+    style:
+      top: 53%
+      left: 50%
+      font-size: 6vw
+      color: black
+
+

@@ -1,0 +1,7 @@
+vacuum_fan_speed:
+  name: Sugestyrke
+  icon: mdi:fan
+  initial: 101
+  min: 101
+  max: 104
+  step: 1

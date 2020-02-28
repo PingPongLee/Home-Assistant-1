@@ -1,0 +1,25 @@
+title: Stuen
+type: entities
+entities:
+  - type: custom:slider-entity-row
+    toggle: true
+    entity: light.gulvlampe
+  - type: custom:slider-entity-row
+    toggle: true
+    entity: light.laeselampe
+
+  - type: custom:fold-entity-row
+#    entity: light.stuelampe
+    head:
+      type: custom:slider-entity-row
+      toggle: true
+      entity: light.stuelampe
+    entities:
+      - type: custom:slider-entity-row
+        hide_state: true
+        toggle: false
+        entity: light.stuelampe_1
+      - type: custom:slider-entity-row
+        hide_state: true
+        toggle: false
+        entity: light.stuelampe_2

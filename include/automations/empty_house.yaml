@@ -1,0 +1,75 @@
+# Turn off all lights when house is empty
+- alias: "Sluk ALT lys når huset er tomt"
+  trigger:
+    - platform: state
+      entity_id: group.persons
+      from: 'home'
+      to: 'not_home'
+  action:
+    service: light.turn_off
+    data:
+      entity_id: all
+
+# Turn off light in certain room when the occupant haw left
+- alias: "Sluk lyset på et værelse når nogen er gået"
+  trigger:
+    - platform: state
+      entity_id:
+#        - person.jacob
+#        - person.rikke
+        - person.cornelie
+        - person.nathalie
+        - person.hjalte
+      from: 'home'
+      to: 'not_home'
+# Fires endlessly if not present....!?
+  condition:
+    - condition: template
+      value_template: "{{ trigger.to_state.state != trigger.from_state.state }}"
+  action:
+    - service: light.turn_off
+      data_template: 
+        entity_id: >-
+          {# if trigger.from_state.attributes.friendly_name == "Jacob" #}
+          {# elif trigger.from_state.attributes.friendly_name == "Rikke" #}
+          {# elif trigger.from_state.attributes.friendly_name == "Cornelie" #}
+          {% if trigger.from_state.attributes.friendly_name == "Cornelie" %}
+            light.cornelies_vaerelse
+          {% elif trigger.from_state.attributes.friendly_name == "Nathalie" %}
+            light.nathalies_vaerelse
+          {% elif trigger.from_state.attributes.friendly_name == "Hjalte" %}
+            light.hjaltes_vaerelse
+          {% endif %}
+
+# Turn on the patio light when a person arrives and it is night
+- alias: "Tænd lys ved ankomst om natten"
+  trigger:
+    - platform: state
+      entity_id:
+        - person.jacob
+        - person.rikke
+        - person.cornelie
+        - person.nathalie
+        - person.hjalte
+      from: 'not_home'
+      to: 'home'
+  # Is it dark?
+  condition:
+    - condition: template
+      value_template: "{{ is_state('binary_sensor.dark', 'on') }}"
+  action:
+    - service: light.turn_on
+      data_template:
+        entity_id:
+          - light.havegang
+        brightness: 255
+
+    # Work: get delay from GUI
+    - delay:
+        minutes: >-
+          {{ states("input_number.timeout_arrived_night") | int }}
+
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.havegang

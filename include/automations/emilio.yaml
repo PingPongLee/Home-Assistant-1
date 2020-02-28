@@ -1,0 +1,26 @@
+# Snitch to tell if Emilio is up
+- alias: "Emilio vandrer"
+  trigger:
+    # Track the following rooms
+    platform: state
+    entity_id:
+      - light.emilio
+      - light.gangen
+      - light.badevaerelse_lille
+      - light.badevaerelse_stort
+
+  # When to track
+  # WORK: put input in GUI
+  condition:
+    condition: time
+    after: "04:30:00"
+    before: "08:00:00"
+
+  action:
+    service_template: >-
+      {% if trigger.to_state.state == "on" %}
+        light.turn_on
+      {% else %}
+        light.turn_off
+      {% endif %}
+    entity_id: light.legekokken

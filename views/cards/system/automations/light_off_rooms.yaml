@@ -1,0 +1,6 @@
+type: custom:fold-entity-row
+head: automation.sluk_glemt_lys_pa_vaerelser
+entities:
+  - type: custom:slider-entity-row
+    entity: input_number.timeout_forgotten_light
+    name: Timeout

@@ -1,0 +1,9 @@
+restart_ha_main: 'curl http://192.168.0.12:8126/container/Homeassistant/restart'
+
+restart_ha_slave: 'curl http://192.168.0.12:8126/container/Homeassistant-Slave/restart'
+
+restart_nginx: 'curl http://192.168.0.12:8126/container/organizr/restart'
+
+restart_portainer: 'curl http://192.168.0.12:8126/container/portainer/restart'
+
+restart_dockermon: 'curl http://192.168.0.12:8126/container/dockermon/restart'

@@ -1,0 +1,9 @@
+persons:
+  name: Personer
+  entities:
+    - person.jacob
+    - person.rikke
+    - person.cornelie
+    - person.nathalie
+    - person.hjalte
+  icon: mdi:account-group

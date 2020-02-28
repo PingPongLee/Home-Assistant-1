@@ -1,0 +1,14 @@
+script.restart_ha_main:
+  icon: mdi:home-assistant
+
+script.restart_ha_slave:
+  icon: mdi:home-assistant
+
+script.restart_nginx:
+  icon: mdi:web
+
+script.restart_portainer:
+  icon: mdi:ship-wheel
+
+script.restart_dockermon:
+  icon: mdi:docker

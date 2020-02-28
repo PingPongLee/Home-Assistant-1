@@ -1,0 +1,27 @@
+title: Hjalte
+type: entities
+show_header_toggle: false
+entities:
+  - type: custom:fold-entity-row
+    head:
+      type: custom:slider-entity-row
+      toggle: true
+      entity: light.hjaltes_loftslampe
+    entities:
+      - type: custom:slider-entity-row
+        name: 1
+        toggle: true
+        entity: light.hjaltes_loftlampe_1
+      - type: custom:slider-entity-row
+        name: 2
+        toggle: true
+        entity: light.hjaltes_loftlampe_2
+      - type: custom:slider-entity-row
+        name: 3
+        toggle: true
+        entity: light.hjaltes_loftlampe_3
+
+  - type: custom:slider-entity-row
+    toggle: true
+    entity: light.nanoleaf
+

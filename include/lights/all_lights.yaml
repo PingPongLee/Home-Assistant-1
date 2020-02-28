@@ -1,0 +1,17 @@
+- platform: group
+  name: All Lights
+  entities:
+    - light.badevaerelse_lille
+    - light.badevaerelse_stort
+    - light.colins_vaerelse
+    - light.cornelies_vaerelse
+    - light.emilios_vaerelse
+    - light.gangen
+    - light.havegang
+    - light.hjaltes_vaerelse
+    - light.indgang
+    - light.kokken
+    - light.legevaerelse
+    - light.nathalies_vaerelse
+    - light.pigernes_stue
+    - light.stuen

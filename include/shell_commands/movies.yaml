@@ -1,0 +1,2 @@
+movies_load_movies: 'bash -c /config/custom_components/shell/movies_load_movies.sh'
+movies_load_covers: 'bash -c /config/custom_components/shell/movies_load_covers.sh'

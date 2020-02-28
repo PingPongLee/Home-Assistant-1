@@ -1,0 +1,11 @@
+vacuum_room:
+  name: "Vælg rum"
+  icon: mdi:floor-plan
+  options:
+    - DUMMY
+
+vacuum_power:
+  name: "Vælg sugestyrke"
+  icon: mdi:fan
+  options:
+    - DUMMY

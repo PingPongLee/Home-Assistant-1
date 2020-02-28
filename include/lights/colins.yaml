@@ -1,0 +1,10 @@
+- platform: switch
+  name: Colins månelampe
+  entity_id: switch.colins_manelampe_stik
+
+- platform: group
+  name: Colins værelse
+  entities:
+    - light.colins_lampe
+    - light.colins_loftlampe
+    - light.colins_manelampe

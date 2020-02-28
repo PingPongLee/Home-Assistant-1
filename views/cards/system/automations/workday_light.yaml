@@ -1,0 +1,5 @@
+type: custom:fold-entity-row
+head: automation.cornelies_lys_hverdagsmorgener
+entities:
+  - input_datetime.patio_morning_time
+  - input_datetime.patio_morning_duration

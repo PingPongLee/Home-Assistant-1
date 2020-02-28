@@ -1,0 +1,14 @@
+type: entities
+title: Børn
+show_header_toggle: false
+entities:
+
+  - type: custom:fold-entity-row
+    head: automation.emilio_vandrer
+    entities:
+      - entity: input_datetime.emilio_track_start
+      - entity: input_datetime.emilio_track_end
+
+  - automation.toilet
+
+  - !include automations/workday_light.yaml

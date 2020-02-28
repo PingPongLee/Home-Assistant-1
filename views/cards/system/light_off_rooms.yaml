@@ -1,0 +1,9 @@
+type: entities
+title: Sluk glemt lys på værelser
+show_header_toggle: false
+entities:
+
+  - entity: automation.sluk_glemt_lys_pa_vaerelser
+    type: custom:toggle-lock-entity-row
+
+  - input_number.timeout_forgotten_light

@@ -1,0 +1,34 @@
+# lovelace_gen
+type: custom:vertical-stack-in-card
+{% if title | length %}
+title: {{ title }}
+{% endif %}
+cards:
+  {% for entity_row in entities %}
+  - type: horizontal-stack
+    cards:
+    {% for entity in entity_row %}
+      {% if  entity | length %}
+      - type: entity-button
+        entity: {{ entity }}
+      {% else %}
+      - type: custom:gap-card
+        height: 1
+        size: 1
+      {% endif %}
+    {% endfor %}
+  - type: horizontal-stack
+    cards:
+    {% for entity in entity_row %}
+      {% if  entity | length %}
+      - type: custom:slider-entity-row
+        entity: {{ entity }}
+        full_row: true
+        hide_state: true
+      {% else %}
+      - type: custom:gap-card
+        height: 1  
+        size: 1
+      {% endif %}
+    {% endfor %}
+  {% endfor %}

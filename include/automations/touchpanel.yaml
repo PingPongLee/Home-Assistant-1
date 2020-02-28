@@ -1,0 +1,14 @@
+# Turn off the touchpanel when it is night
+- alias: "Sluk touchpanel når det er nat"
+  trigger:
+    # Trigger - all lights in the living room is off
+    - platform: state
+      entity_id: light.stuen
+      from: 'on'
+      to: 'off'
+  # Only fire when it is night
+  condition:
+    - condition: template
+      value_template: "{{ is_state('sensor.night', 'on') }}"
+  action:
+    service: shell_command.touchscreen_suspend

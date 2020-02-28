@@ -1,0 +1,20 @@
+movie:
+  name: "Vælg film"
+  icon: mdi:filmstrip
+  options:
+    - DUMMY
+
+movie_url:
+  name: "Movie URL"
+  options:
+    - DUMMY
+
+#movie_covers:
+#  name: "Movie Covers"
+#  options:
+#    - DUMMY
+
+#movie_covers_url:
+#  name: "Movie Covers URL"
+#  options:
+#    - DUMMY

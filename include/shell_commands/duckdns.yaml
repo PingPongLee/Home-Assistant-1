@@ -1,0 +1,1 @@
+update_duckdns: "source /config/custom_components/shell/tools.sh; duckdns_update"

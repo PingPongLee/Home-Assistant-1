@@ -1,0 +1,71 @@
+# lovelace_gen
+type: entities
+{% if title | length %}
+title: {{ title }}
+{% endif %}
+show_header_toggle: false
+entities:
+  {% for entity_row in entities %}
+  - type: custom:fold-entity-row
+    head:
+      type: custom:slider-entity-row
+      toggle: true
+      entity: light.spisebord
+    {% for entity in entity_row %}
+      {% if  entity | length %}
+      - type: entity-button
+        entity: {{ entity }}
+      {% else %}
+      - type: custom:gap-card
+        height: 1
+        size: 1
+      {% endif %}
+    {% endfor %}
+
+    entities:
+      - !include
+        - slider_fold.yaml
+        - entity: light.spisebord_1
+          name: 1
+      - !include
+        - slider_fold.yaml
+        - entity: light.spisebord_2
+          name: 2
+  {% if not loop.last %}
+  - type: divider
+  {% endif %}
+  {% endfor %}
+
+type: custom:vertical-stack-in-card
+{% if title | length %}
+title: {{ title }}
+{% endif %}
+cards:
+  {% for entity_row in entities %}
+  - type: horizontal-stack
+    cards:
+    {% for entity in entity_row %}
+      {% if  entity | length %}
+      - type: entity-button
+        entity: {{ entity }}
+      {% else %}
+      - type: custom:gap-card
+        height: 1
+        size: 1
+      {% endif %}
+    {% endfor %}
+  - type: horizontal-stack
+    cards:
+    {% for entity in entity_row %}
+      {% if  entity | length %}
+      - type: custom:slider-entity-row
+        entity: {{ entity }}
+        full_row: true
+        hide_state: true
+      {% else %}
+      - type: custom:gap-card
+        height: 1  
+        size: 1
+      {% endif %}
+    {% endfor %}
+  {% endfor %}

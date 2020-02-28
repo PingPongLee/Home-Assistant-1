@@ -1,0 +1,4 @@
+vacuum_rooms:
+  initial_value: "DUMMY"
+vacuum_default_fanspeed:
+  initial_value: "DUMMY"

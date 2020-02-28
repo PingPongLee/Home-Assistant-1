@@ -1,0 +1,45 @@
+type: markdown
+title: Tasklist in HomeAssistant
+content: >
+  ## Følgende skal udvikles:
+
+  - /automations/
+    - dimmers.yaml
+      - ~~Natsænkning - condition about time~~
+    - emilio.yaml
+      - ~~Emilio vandrer - time in GUI~~
+    - empty_house.yaml
+      - ~~Check commented out conditions~~
+      - ~~Check if script is needed~~
+      - ~~Get delay from GUI~~
+    - morning_lights.yaml
+      - ~~Collect turn_on and turn_off in one automation~~
+    - toilet.yaml
+      - ~~Save the volume from the Google Mini for restore~~
+    - touchpanel.yaml
+      - ~~Turn on at arrival - improvements~~
+    - vacuum_power_select.yaml
+      - ~~Recode for no hardcoded strings~~
+
+  - /input/select/
+    - select_vac.yaml
+      - ~~Load values dynamicly~~
+
+  - /Scripts/
+    - ~~ligths_off_night.yaml~~
+        - ~~Redundant....?~~
+    - movies.yaml
+      - Play/pause - check test and new code
+      - Play - Server as variable
+      - All functions - dynamic media_player
+    - toilet.yaml
+      - ~~Make generic loop script~~
+      - ~~Pass variables~~
+    - vac_tools.yaml
+      - ~~Cleanup code~~
+
+  - /Sensors/
+    - garbage.yaml
+      - ~~Move the 2 lists global~~
+    - time.yaml
+      - ~~Move the 2 lists global~~

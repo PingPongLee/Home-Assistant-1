@@ -1,0 +1,26 @@
+resources: !include_dir_merge_list include/resources/
+
+custom_header:
+  compact_mode: true
+  exceptions:
+    - conditions:
+        user: TouchPanel
+      config:
+#        disable_sidebar: true
+        compact_mode: true
+#        hide_tabs: 3,6,7
+
+title: Skovtrolden
+
+views:
+  - !include views/main.yaml
+  - !include views/calendar.yaml
+  - !include views/light_rooms.yaml
+#  - !include views/living_room.yaml
+  - !include views/movies.yaml
+  - !include views/media.yaml
+  - !include views/light_admin.yaml
+  - !include views/services.yaml
+  - !include views/system.yaml
+  - !include views/test.yaml
+  - !include views/livemap.yaml

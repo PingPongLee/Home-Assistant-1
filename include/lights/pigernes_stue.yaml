@@ -1,0 +1,13 @@
+- platform: switch
+  name: Lys i reol stik
+  entity_id: switch.lys_i_reol_pigernes_stue
+
+- platform: group
+  name: Lys i reol, pigernes stue
+  entities:
+    - light.lys_i_reol_stik
+
+- platform: group
+  name: Pigernes stue
+  entities:
+    - light.lys_i_reol_stik

@@ -1,0 +1,4 @@
+- platform: group
+  name: Emilios værelse
+  entities:
+    - light.emilios_loftlampe

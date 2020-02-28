@@ -1,0 +1,7 @@
+type: custom:fold-entity-row
+head: automation.sluk_taendt_lys_om_natten
+entities:
+  - input_datetime.night_start_time
+  - input_datetime.night_end_time
+  - entity: input_number.timeout_night
+    name: Timeout

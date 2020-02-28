@@ -1,0 +1,5 @@
+type: custom:fold-entity-row
+head: automation.taend_lys_ved_ankomst_om_natten
+entities:
+  - entity: input_number.timeout_arrived_night
+    name: Timeout

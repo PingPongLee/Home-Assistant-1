@@ -1,0 +1,40 @@
+- platform: group
+  name: Spisebord
+  entities:
+    - light.spisebord_1
+    - light.spisebord_2
+
+- platform: group
+  name: Kaffebar
+  entities:
+    - light.kaffebar_1
+    - light.kaffebar_2
+
+- platform: group
+  name: Køkkenø
+  entities:
+    - light.kokkeno_1
+    - light.kokkeno_2
+    - light.kokkeno_3
+
+- platform: group
+  name: Køkkenbord
+  entities:
+    - light.kokkenbord_1
+    - light.kokkenbord_2
+
+#- platform: group
+#  name: Køkkenskabe
+#  entities:
+#    - light.kokkenskabe
+
+- platform: group
+  name: Køkken
+  entities:
+    - light.spisebord
+    - light.kaffebar
+    - light.kokkeno
+    - light.kokkenbord
+    - light.kokkenskabe
+    - light.maleri_kokken
+    - light.legekokken

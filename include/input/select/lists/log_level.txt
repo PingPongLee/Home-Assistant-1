@@ -1,0 +1,9 @@
+input_select.log_level
+critical
+fatal
+error
+warning
+warn
+info
+debug
+notset

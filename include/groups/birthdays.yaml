@@ -1,0 +1,10 @@
+birthdays:
+  name: Fødselsdage
+  entities:
+    - sensor.jacob_fodselsdag
+    - sensor.rikke_fodselsdag
+    - sensor.cornelie_fodselsdag
+    - sensor.nathalie_fodselsdag
+    - sensor.hjalte_fodselsdag
+    - sensor.emilio_fodselsdag
+    - sensor.colin_fodselsdag

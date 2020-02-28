@@ -1,0 +1,32 @@
+# Turn on patio and entrance light on workdays
+- alias: "Cornelies lys - hverdagsmorgener"
+  trigger:
+    # Time from GUI is the trigger
+    - platform: template
+      value_template: >-
+        {{ states('sensor.time') == (state_attr("input_datetime.patio_morning_time", "timestamp") | int | timestamp_custom('%H:%M', false)) }}
+    - platform: template
+      value_template: >-
+        {{ states('sensor.time') == ((state_attr("input_datetime.patio_morning_time", "timestamp")+state_attr("input_datetime.patio_morning_duration", "timestamp")) | int | timestamp_custom('%H:%M', false)) }}
+
+  # Only trigger on workdays and if it is dark (night)
+  condition:
+    - condition: state
+      entity_id: binary_sensor.arbejdsdag
+      state: "on"
+    - condition: state
+      entity_id: sensor.night
+      state: "on"
+
+  action:
+    - service_template: >-
+        {% if states('sensor.time') >= ((state_attr("input_datetime.patio_morning_time", "timestamp")+state_attr("input_datetime.patio_morning_duration", "timestamp")) | int | timestamp_custom('%H:%M', false)) %}
+          light.turn_off
+        {% else %}
+          light.turn_on
+        {% endif %}
+      data:
+        entity_id:
+          - light.havegang
+          - light.indgang
+        brightness: "255"

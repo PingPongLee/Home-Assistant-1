@@ -1,0 +1,7 @@
+type: custom:auto-entities
+card:
+  type: entities
+  title: Alle automatiseringer
+filter:
+  include:
+    - domain: automation

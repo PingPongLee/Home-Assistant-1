@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta name="Author" content="Made by 'tree'">
+ <meta name="GENERATOR" content="$Version: $ tree v1.7.0 (c) 1996 - 2014 by Steve Baker, Thomas Moore, Francesc Rocher, Florian Sesser, Kyosuke Tokoro $">
+ <title>Home Assistant Core</title>
+ <style type="text/css">
+  <!-- 
+  BODY { font-family : ariel, monospace, sans-serif; }
+  P { font-weight: normal; font-family : ariel, monospace, sans-serif; color: black; background-color: transparent;}
+  B { font-weight: normal; color: black; background-color: transparent;}
+  A:visited { font-weight : normal; text-decoration : none; background-color : transparent; margin : 0px 0px 0px 0px; padding : 0px 0px 0px 0px; display: inline; }
+  A:link    { font-weight : normal; text-decoration : none; margin : 0px 0px 0px 0px; padding : 0px 0px 0px 0px; display: inline; }
+  A:hover   { color : #000000; font-weight : normal; text-decoration : underline; background-color : yellow; margin : 0px 0px 0px 0px; padding : 0px 0px 0px 0px; display: inline; }
+  A:active  { color : #000000; font-weight: normal; background-color : transparent; margin : 0px 0px 0px 0px; padding : 0px 0px 0px 0px; display: inline; }
+  .VERSION { font-size: small; font-family : arial, sans-serif; }
+  .NORM  { color: black;  background-color: transparent;}
+  .FIFO  { color: purple; background-color: transparent;}
+  .CHAR  { color: yellow; background-color: transparent;}
+  .DIR   { color: blue;   background-color: transparent;}
+  .BLOCK { color: yellow; background-color: transparent;}
+  .LINK  { color: aqua;   background-color: transparent;}
+  .SOCK  { color: fuchsia;background-color: transparent;}
+  .EXEC  { color: green;  background-color: transparent;}
+  -->
+ </style>
+</head>
+<body>
+	<h1>Home Assistant Core</h1><p>
+	<b class="NORM">/opt/homeassistant/</b><br>
+	├── <b class="DIR">include</b><br>
+	│   ├── <b class="DIR">automations</b><br>
+	│   │   ├── <b class="NORM">browser.yaml</b><br>
+	│   │   ├── <b class="NORM">dimmers.yaml</b><br>
+	│   │   ├── <b class="NORM">emilio.yaml</b><br>
+	│   │   ├── <b class="NORM">empty_house.yaml</b><br>
+	│   │   ├── <b class="NORM">hallway_test.yaml</b><br>
+	│   │   ├── <b class="NORM">lights_off_night.yaml</b><br>
+	│   │   ├── <b class="NORM">morning_lights.yaml</b><br>
+	│   │   ├── <b class="NORM">movies.yaml</b><br>
+	│   │   ├── <b class="NORM">system.yaml</b><br>
+	│   │   ├── <b class="NORM">toilet.yaml</b><br>
+	│   │   ├── <b class="NORM">touchpanel.yaml</b><br>
+	│   │   └── <b class="NORM">vacuum_power_select.yaml</b><br>
+	│   ├── <b class="DIR">binary_sensors</b><br>
+	│   │   ├── <b class="NORM">network.yaml</b><br>
+	│   │   └── <b class="NORM">workday.yaml</b><br>
+	│   ├── <b class="DIR">groups</b><br>
+	│   │   ├── <b class="NORM">birthdays.yaml</b><br>
+	│   │   ├── <b class="NORM">persons.yaml</b><br>
+	│   │   └── <b class="NORM">scripts.yaml</b><br>
+	│   ├── <b class="DIR">input</b><br>
+	│   │   ├── <b class="DIR">datetime</b><br>
+	│   │   │   └── <b class="NORM">time_triggers.yaml</b><br>
+	│   │   ├── <b class="DIR">number</b><br>
+	│   │   │   ├── <b class="NORM">dim_values.yaml</b><br>
+	│   │   │   ├── <b class="NORM">sun_elevation_light.yaml</b><br>
+	│   │   │   └── <b class="NORM">timeouts.yaml</b><br>
+	│   │   ├── <b class="DIR">select</b><br>
+	│   │   │   ├── <b class="DIR">lists</b><br>
+	│   │   │   │   ├── <b class="NORM">log_level.txt</b><br>
+	│   │   │   │   ├── <b class="NORM">media_player.txt</b><br>
+	│   │   │   │   ├── <b class="NORM">movie_covers.txt</b><br>
+	│   │   │   │   ├── <b class="NORM">room_light.txt</b><br>
+	│   │   │   │   ├── <b class="NORM">vacuum_power.txt</b><br>
+	│   │   │   │   └── <b class="NORM">vacuum_room.txt</b><br>
+	│   │   │   ├── <b class="NORM">log_level.yaml</b><br>
+	│   │   │   ├── <b class="NORM">movies.yaml</b><br>
+	│   │   │   ├── <b class="NORM">room_light.yaml</b><br>
+	│   │   │   └── <b class="NORM">select_vac.yaml</b><br>
+	│   │   └── <b class="DIR">text</b><br>
+	│   ├── <b class="DIR">lights</b><br>
+	│   │   ├── <b class="NORM">all_lights.yaml</b><br>
+	│   │   ├── <b class="NORM">badeværelser.yaml</b><br>
+	│   │   ├── <b class="NORM">colins.yaml</b><br>
+	│   │   ├── <b class="NORM">cornelies.yaml</b><br>
+	│   │   ├── <b class="NORM">emilios.yaml</b><br>
+	│   │   ├── <b class="NORM">gangen.yaml</b><br>
+	│   │   ├── <b class="NORM">havegang.yaml</b><br>
+	│   │   ├── <b class="NORM">hjaltes.yaml</b><br>
+	│   │   ├── <b class="NORM">indgang.yaml</b><br>
+	│   │   ├── <b class="NORM">køkken.yaml</b><br>
+	│   │   ├── <b class="NORM">legeværelse.yaml</b><br>
+	│   │   ├── <b class="NORM">nathalies.yaml</b><br>
+	│   │   ├── <b class="NORM">pigernes_stue.yaml</b><br>
+	│   │   └── <b class="NORM">stuen.yaml</b><br>
+	│   ├── <b class="DIR">panels</b><br>
+	│   │   ├── <b class="NORM">ha-slave.yaml</b><br>
+	│   │   └── <b class="NORM">portainer.yaml</b><br>
+	│   ├── <b class="DIR">resources</b><br>
+	│   │   ├── <b class="NORM">hacs_js.yaml</b><br>
+	│   │   ├── <b class="NORM">hacs_modules.yaml</b><br>
+	│   │   └── <b class="NORM">non_hacs_js.yaml</b><br>
+	│   ├── <b class="DIR">rest_commands</b><br>
+	│   │   └── <b class="NORM">vacuum.yaml</b><br>
+	│   ├── <b class="DIR">scripts</b><br>
+	│   │   ├── <b class="NORM">dim_lights.yaml</b><br>
+	│   │   ├── <b class="NORM">dockermon.yaml</b><br>
+	│   │   ├── <b class="NORM">flashing.yaml</b><br>
+	│   │   ├── <b class="NORM">movies.yaml</b><br>
+	│   │   ├── <b class="NORM">toilet.yaml</b><br>
+	│   │   ├── <b class="NORM">tools.yaml</b><br>
+	│   │   └── <b class="NORM">vacuum.yaml</b><br>
+	│   ├── <b class="DIR">sensors</b><br>
+	│   │   ├── <b class="NORM">birthday.yaml</b><br>
+	│   │   ├── <b class="NORM">garbage.yaml</b><br>
+	│   │   ├── <b class="NORM">movies.yaml</b><br>
+	│   │   ├── <b class="NORM">night.yaml</b><br>
+	│   │   ├── <b class="NORM">ping.yaml</b><br>
+	│   │   ├── <b class="NORM">random.yaml</b><br>
+	│   │   ├── <b class="NORM">rejseplanen.yaml</b><br>
+	│   │   ├── <b class="NORM">time.yaml</b><br>
+	│   │   └── <b class="NORM">vacuum.yaml</b><br>
+	│   ├── <b class="DIR">shell_commands</b><br>
+	│   │   ├── <b class="NORM">dockermon.yaml</b><br>
+	│   │   ├── <b class="NORM">duckdns.yaml</b><br>
+	│   │   ├── <b class="NORM">load_input.yaml</b><br>
+	│   │   ├── <b class="NORM">load_vars.yaml</b><br>
+	│   │   └── <b class="NORM">movies.yaml</b><br>
+	│   ├── <b class="DIR">switches</b><br>
+	│   │   └── <b class="NORM">dockermon.yaml</b><br>
+	│   ├── <b class="DIR">var</b><br>
+	│   │   ├── <b class="DIR">values</b><br>
+	│   │   │   ├── <b class="NORM">months_dk.txt</b><br>
+	│   │   │   ├── <b class="NORM">slideshow.txt</b><br>
+	│   │   │   ├── <b class="NORM">toilet_done.txt</b><br>
+	│   │   │   ├── <b class="NORM">vacuum.txt</b><br>
+	│   │   │   └── <b class="NORM">weekdays_dk.txt</b><br>
+	│   │   ├── <b class="NORM">prev_volume.yaml</b><br>
+	│   │   ├── <b class="NORM">slideshow.yaml</b><br>
+	│   │   ├── <b class="NORM">strings.yaml</b><br>
+	│   │   ├── <b class="NORM">system.yaml</b><br>
+	│   │   └── <b class="NORM">vacuum.yaml</b><br>
+	│   └── <b class="NORM">device_trackers.yaml</b><br>
+	├── <b class="DIR">themes</b><br>
+	│   ├── <b class="NORM">amoled.yaml</b><br>
+	│   ├── <b class="NORM">aqua-fiesta.yaml</b><br>
+	│   ├── <b class="NORM">clear-dark.yaml</b><br>
+	│   ├── <b class="NORM">dark_orange.yaml</b><br>
+	│   ├── <b class="NORM">noctis.yaml</b><br>
+	│   └── <b class="NORM">sweetpink.yaml</b><br>
+	├── <b class="DIR">views</b><br>
+	│   ├── <b class="DIR">cards</b><br>
+	│   │   ├── <b class="DIR">rooms</b><br>
+	│   │   │   ├── <b class="DIR">buttons</b><br>
+	│   │   │   │   ├── <b class="NORM">bt_bathrooms.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">bt_colin.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">bt_cornelie.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">bt_emilio.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">bt_entrance.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">bt_hall.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">bt_hjalte.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">bt_kitchen_2_rows.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">bt_kitchen.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">bt_livingroom_2_rows.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">bt_livingroom.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">bt_nathalie.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">bt_patio.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">bt_playroom.yaml</b><br>
+	│   │   │   │   └── <b class="NORM">bt_youth_livingroom.yaml</b><br>
+	│   │   │   ├── <b class="DIR">folded</b><br>
+	│   │   │   │   ├── <b class="NORM">fl_bathrooms.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">fl_colin.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">fl_cornelie.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">fl_emilio.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">fl_entrance.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">fl_hall.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">fl_hjalte.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">fl_kitchen.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">fl_livingroom.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">fl_nathalie.yaml</b><br>
+	│   │   │   │   └── <b class="NORM">fl_patio.yaml</b><br>
+	│   │   │   ├── <b class="NORM">bathrooms.yaml</b><br>
+	│   │   │   ├── <b class="NORM">colin.yaml</b><br>
+	│   │   │   ├── <b class="NORM">common.yaml</b><br>
+	│   │   │   ├── <b class="NORM">cornelie.yaml</b><br>
+	│   │   │   ├── <b class="NORM">emilio.yaml</b><br>
+	│   │   │   ├── <b class="NORM">entrance.yaml</b><br>
+	│   │   │   ├── <b class="NORM">hall.yaml</b><br>
+	│   │   │   ├── <b class="NORM">hjalte.yaml</b><br>
+	│   │   │   ├── <b class="NORM">kitchen.yaml</b><br>
+	│   │   │   ├── <b class="NORM">livingroom.yaml</b><br>
+	│   │   │   ├── <b class="NORM">nathalie.yaml</b><br>
+	│   │   │   ├── <b class="NORM">patio.yaml</b><br>
+	│   │   │   └── <b class="NORM">playroom.yaml</b><br>
+	│   │   ├── <b class="DIR">system</b><br>
+	│   │   │   ├── <b class="DIR">automations</b><br>
+	│   │   │   │   ├── <b class="NORM">arrive_night.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">light_control.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">light_off_rooms.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">night_light.yaml</b><br>
+	│   │   │   │   ├── <b class="NORM">patio.yaml</b><br>
+	│   │   │   │   └── <b class="NORM">workday_light.yaml</b><br>
+	│   │   │   ├── <b class="NORM">all_automations.yaml</b><br>
+	│   │   │   ├── <b class="NORM">automations.yaml</b><br>
+	│   │   │   ├── <b class="NORM">batteries_remotes.yaml</b><br>
+	│   │   │   ├── <b class="NORM">dockermon.yaml</b><br>
+	│   │   │   ├── <b class="NORM">emilio.yaml</b><br>
+	│   │   │   ├── <b class="NORM">light_off_rooms.yaml</b><br>
+	│   │   │   ├── <b class="NORM">log_level.yaml</b><br>
+	│   │   │   ├── <b class="NORM">persons.yaml</b><br>
+	│   │   │   ├── <b class="NORM">printer.yaml</b><br>
+	│   │   │   ├── <b class="NORM">restart_gateways.yaml</b><br>
+	│   │   │   ├── <b class="NORM">to_do_in_ha.yaml</b><br>
+	│   │   │   ├── <b class="NORM">unavailable.yaml</b><br>
+	│   │   │   └── <b class="NORM">windy.yaml</b><br>
+	│   │   ├── <b class="NORM">birthday.yaml</b><br>
+	│   │   ├── <b class="NORM">christmas.yaml</b><br>
+	│   │   ├── <b class="NORM">clock.yaml</b><br>
+	│   │   ├── <b class="NORM">events.yaml</b><br>
+	│   │   ├── <b class="NORM">ferie.yaml</b><br>
+	│   │   ├── <b class="NORM">garbage.yaml</b><br>
+	│   │   ├── <b class="NORM">movies.yaml</b><br>
+	│   │   ├── <b class="NORM">new_years_eve.yaml</b><br>
+	│   │   ├── <b class="NORM">people_away.yaml</b><br>
+	│   │   ├── <b class="NORM">people_home_picture.yaml</b><br>
+	│   │   ├── <b class="NORM">people_home.yaml</b><br>
+	│   │   ├── <b class="NORM">select_room_light.yaml</b><br>
+	│   │   ├── <b class="NORM">transport.yaml</b><br>
+	│   │   ├── <b class="NORM">vacuum.yaml</b><br>
+	│   │   └── <b class="NORM">weather.yaml</b><br>
+	│   ├── <b class="NORM">calendar.yaml</b><br>
+	│   ├── <b class="NORM">light_admin.yaml</b><br>
+	│   ├── <b class="NORM">livemap.yaml</b><br>
+	│   ├── <b class="NORM">living_room.yaml</b><br>
+	│   ├── <b class="NORM">main.yaml</b><br>
+	│   ├── <b class="NORM">media.yaml</b><br>
+	│   ├── <b class="NORM">movies.yaml</b><br>
+	│   ├── <b class="NORM">rooms.yaml</b><br>
+	│   ├── <b class="NORM">services.yaml</b><br>
+	│   ├── <b class="NORM">system.yaml</b><br>
+	│   └── <b class="NORM">test.yaml</b><br>
+	├── <b class="DIR">www</b><br>
+	│   ├── <b class="DIR">images</b><br>
+	│   │   ├── <b class="DIR">backgrounds</b><br>
+	│   │   │   ├── <b class="NORM">birthday_5x2.jpg</b><br>
+	│   │   │   ├── <b class="NORM">christmas.jpg</b><br>
+	│   │   │   ├── <b class="NORM">ferie_5x2.jpg</b><br>
+	│   │   │   ├── <b class="NORM">ferie.jpg</b><br>
+	│   │   │   ├── <b class="NORM">new_years_eve.png</b><br>
+	│   │   │   ├── <b class="NORM">night_5x2.jpg</b><br>
+	│   │   │   └── <b class="NORM">night.jpg</b><br>
+	│   │   ├── <b class="DIR">covers</b><br>
+	│   │   ├── <b class="NORM">user_boy.png</b><br>
+	│   │   ├── <b class="NORM">user_female.png</b><br>
+	│   │   └── <b class="NORM">vacuum.png</b><br>
+	│   ├── <b class="DIR">plugins</b><br>
+	│   │   ├── <b class="NORM">state-switch.js</b><br>
+	│   │   └── <b class="NORM">toggle-lock-entity-row.js</b><br>
+	│   └── <b class="NORM">tree.html</b><br>
+	├── <b class="NORM">configuration.yaml</b><br>
+	├── <b class="NORM">google_calendars.yaml</b><br>
+	├── <b class="NORM">home-assistant.log</b><br>
+	├── <b class="NORM">home-assistant_v2.db</b><br>
+	├── <b class="NORM">known_devices.yaml</b><br>
+	├── <b class="NORM">secrets.yaml</b><br>
+	└── <b class="NORM">ui-lovelace.yaml</b><br>
+	<br><br>
+	</p>
+	<p>
+
+33 directories, 194 files
+	<br><br>
+	</p>
+	<hr>
+	<p class="VERSION">
+		 tree v1.7.0 © 1996 - 2014 by Steve Baker and Thomas Moore <br>
+		 HTML output hacked and copyleft © 1998 by Francesc Rocher <br>
+		 JSON output hacked and copyleft © 2014 by Florian Sesser <br>
+		 Charsets / OS/2 support © 2001 by Kyosuke Tokoro
+	</p>
+</body>
+</html>

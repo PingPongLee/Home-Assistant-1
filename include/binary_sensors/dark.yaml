@@ -1,0 +1,9 @@
+# Night Time
+- platform: template
+  sensors:
+    dark:
+      friendly_name: "Det er mørkt"
+      # Boolean - is the suns elevation less or equal AND the
+      # the earliest time of dimming
+      value_template: >-
+        {{ state_attr('sun.sun', 'elevation') <= (0 - states('input_number.sun_elevation_light') | float ) }}

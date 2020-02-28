@@ -1,0 +1,87 @@
+# A child is done at the toilet
+- alias: "Toilet"
+  trigger:
+    # Trigger - the test light is on
+    # aka the button is pressed
+    - platform: state
+      entity_id: light.test_lampe
+      from: "off"
+      to: "on"
+
+  action:
+    # Turn on media_player
+    - service: media_player.turn_on
+      data:
+        entity_id: media_player.kokken
+    - delay: '00:00:02'
+
+    - service: var.set
+      data_template:
+        entity_id: var.prev_volume
+        value: >-
+          {{ state_attr("media_player.kokken", "volume_level") }}
+    - delay: "00:00:02"
+
+    # turn up the volume on the Google in the kitchen
+    # WORK: save the volume for reset when script is stopped
+    - service: media_player.volume_set
+      entity_id: media_player.kokken
+      data:
+        volume_level: 1
+
+    # Start the announcement
+    - service: script.toilet_done
+      data:
+        delay: "00:00:20"
+
+# Turn off the announcement
+- alias: "Toilet_off"
+  trigger:
+    # Trigger - the test light is off
+    # aka the off button is pressed
+    - platform: state
+      entity_id: light.test_lampe
+      from: "on"
+      to: "off"
+
+  # Stop the announcement and the loop
+  # Must be fired many times to ensure the loop is stopped 
+  action:
+
+    # Turn on media_player
+    - service: media_player.turn_on
+      data:
+        entity_id: media_player.kokken
+    - delay: '00:00:02'
+
+    # Restore previous volume
+    - service: media_player.volume_set
+      entity_id: media_player.kokken
+      data_template:
+        volume_level: >-
+          {{ states("var.prev_volume") | float }}
+
+    - service: script.turn_off
+      entity_id:
+        - script.toilet_done
+        - script.loop
+
+    - service: script.turn_off
+      entity_id:
+        - script.toilet_done
+        - script.loop
+
+    - service: script.turn_off
+      entity_id:
+        - script.toilet_done
+        - script.loop
+
+    - service: script.turn_off
+      entity_id:
+        - script.toilet_done
+        - script.loop
+
+    - service: script.turn_off
+      entity_id:
+        - script.toilet_done
+        - script.loop

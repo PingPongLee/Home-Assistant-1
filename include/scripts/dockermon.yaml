@@ -1,0 +1,24 @@
+restart_ha_main:
+  alias: Restart Homeassistant Main
+  sequence:
+    - service: shell_command.restart_ha_main
+
+restart_ha_slave:
+  alias: Restart Homeassistant Slave
+  sequence:
+    - service: shell_command.restart_ha_slave
+
+restart_nginx:
+  alias: Restart Nginx
+  sequence:
+    - service: shell_command.restart_nginx
+
+restart_portainer:
+  alias: Restart Portainer
+  sequence:
+    - service: shell_command.restart_portainer
+
+restart_dockermon:
+  alias: Restart Dockermon
+  sequence:
+    - service: shell_command.restart_dockermon

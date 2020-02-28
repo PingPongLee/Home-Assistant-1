@@ -1,0 +1,7 @@
+title: Cornelie
+type: entities
+show_header_toggle: false
+entities:
+  - type: custom:slider-entity-row
+    toggle: true
+    entity: light.cornelies_gulvlampe

@@ -1,0 +1,22 @@
+# lovelace_gen
+{% macro slider_fold(entity, i) -%}
+      - type: custom:slider-entity-row
+        hide_state: true
+        toggle: false 
+        name: {{ i }}
+        entity: {{ entity }}{{ i }}
+{%- endmacro %}
+
+type: entities
+title: Havegang
+entities:
+  - type: custom:fold-entity-row
+    head:
+      type: custom:slider-entity-row
+      toggle: true
+      hide_state: true
+      entity: light.havegang
+    entities:
+    {% for i in range(1,12) %}
+      {{ slider_fold("light.havegang_", i) }}
+    {% endfor %}

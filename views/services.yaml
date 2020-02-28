@@ -1,0 +1,17 @@
+title: Netværk
+icon: mdi:power-settings
+panel: true
+cards:
+  - type: custom:layout-card
+    layout: vertical
+    column_num: 3
+    max_columns: 3
+    max_width: [33%,33%,33%]
+    cards:
+      - !include cards/system/dockermon.yaml
+      - break
+
+      - !include cards/system/restart_gateways.yaml
+      - break
+
+      - !include cards/system/all_automations.yaml

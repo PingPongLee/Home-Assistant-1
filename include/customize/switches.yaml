@@ -1,0 +1,14 @@
+switch.homeassistant_main:
+  icon: mdi:home-assistant
+
+switch.homeassistant_slave:
+  icon: mdi:home-assistant
+
+switch.nginx:
+  icon: mdi:web
+
+switch.portainer:
+  icon: mdi:ship-wheel
+
+switch.dockermon:
+  icon: mdi:docker

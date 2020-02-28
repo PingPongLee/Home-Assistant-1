@@ -1,0 +1,7 @@
+title: Test
+icon: mdi:bus-side
+panel: true
+cards:
+
+  - type: iframe
+    url: "https://www.rejseplanen.dk/bin/help.exe/mn?L=vs_dot.vs_livemap&tpl=fullscreenmap&custom=sydtrafik_Regionen"

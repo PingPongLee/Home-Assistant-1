@@ -1,0 +1,144 @@
+# HOME ASSISTANT
+homeassistant:
+  customize: !include_dir_merge_named include/customize/
+
+# DEFAULT CONFIG
+default_config:
+
+# LOVELACE GEN
+lovelace_gen:
+
+# LOVELACE MODE
+lovelace:
+  mode: yaml
+
+# CONFIG
+config:
+
+# TEXT TO SPEECH
+tts:
+  - platform: google_translate
+    language: "da"
+
+# DATABASE
+recorder:
+  db_url: !secret MYSQL_URL
+
+# FRONTEND
+frontend:
+  themes: !include_dir_merge_named themes
+
+# INCLUDES
+# A
+automation: !include_dir_merge_list include/automations/
+
+# B
+binary_sensor: !include_dir_merge_list include/binary_sensors/
+
+# D
+device_tracker: !include include/device_trackers.yaml
+
+# G
+group: !include_dir_merge_named include/groups/
+
+# I
+input_datetime: !include_dir_merge_named include/input/datetime/
+input_number: !include_dir_merge_named include/input/number/
+input_select: !include_dir_merge_named include/input/select/
+input_text: !include_dir_merge_named include/input/text/
+
+# L
+light: !include_dir_merge_list include/lights/
+
+# P
+panel_iframe: !include_dir_merge_named include/panels/
+
+# R
+rest_command: !include_dir_merge_named include/rest_commands/
+
+# S
+script: !include_dir_merge_named include/scripts/
+sensor: !include_dir_merge_list include/sensors/
+shell_command: !include_dir_merge_named include/shell_commands/
+switch: !include_dir_merge_list include/switches/
+
+# V
+var: !include_dir_merge_named include/var/
+
+# GOOGLE
+google:
+  client_id: !secret GOOGLE_CLIENT_ID
+  client_secret: !secret GOOGLE_CLIENT_SECRET
+
+# REMOTE HOMEASSISTANT
+remote_homeassistant:
+  instances:
+  - host: 127.0.0.1
+    port: 8124
+    secure: false
+    verify_ssl: false
+    access_token: !secret REMOTE_HA_API
+    include:
+      domains:
+      - light
+      - switch
+      - sensor
+
+# VACUUM
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret S50_IP
+    token: !secret S50_TOKEN
+    name: R2-D2
+
+# BROWSER_MOD
+browser_mod:
+  devices:
+    527754cd_95c8b201:
+      name: TouchPanel
+
+    e83df4e4-e9e551f5:
+      name: Chromebook
+
+    10016398-d7d4c21b:
+      name: Home Assistant App on Moto
+
+    e8efe5c9_796b8695:
+      name: Moto Z2 Play
+
+    b4351e6e_9b09b559:
+      name: J-Lindvig
+
+    fc32449d_8c4b3c8b:
+      name: LinuxBox
+
+    747ee774_c8d701c0:
+      name: Home Assistant Chromebook
+
+# TUYA
+tuya:
+  username: !secret TUYA_USERNAME
+  password: !secret TUYA_PASSWORD
+  country_code: !secret TUYA_COUNTRY
+  platform: smart_life
+
+# DUCK-DNS
+duckdns:
+  domain: !secret DUCK_DNS_DOMAIN
+  access_token: !secret DUCK_DNS_TOKEN
+
+# LOGGER
+logger:
+
+# MAP
+map:
+
+#media_player:
+  # Use the Python ADB implementation
+#  - platform: androidtv
+#    name: Nathalies TV
+#    host: !secret NATHALIES_TV_IP
+
+#  - platform: androidtv
+#    name: Cornelies TV
+#    host: !secret CORNELIES_TV_IP

@@ -1,0 +1,30 @@
+title: Stuen
+icon: mdi:sofa
+panel: false
+cards:
+
+  - type: entities
+    title: Belysning
+    show_header_toggle: true
+    entities:
+      - type: custom:slider-entity-row
+        entity: light.gulvlampe
+        toggle: true
+      - type: custom:slider-entity-row
+        entity: light.stuelampe
+        toggle: true
+      - type: custom:slider-entity-row
+        entity: light.lyset_i_reolen
+        toggle: true
+      - type: custom:slider-entity-row
+        entity: light.konsolbord
+        toggle: true
+      - type: custom:slider-entity-row
+        entity: light.laeselampe
+        toggle: true
+
+  - type: media-control
+    entity: media_player.stuen
+
+  - type: media-control
+    entity: media_player.tv

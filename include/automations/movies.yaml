@@ -1,0 +1,12 @@
+# Have choosen a movie - find the correct URL
+- alias: "Valgt film - find URL"
+  trigger:
+    # Trigger when  movie is selected
+    - platform: state
+      entity_id: input_select.movie
+  action:
+    # Find the movie
+    - service: script.vlookup
+      data:
+        haystack: "input_select.movie"
+        result_list: "input_select.movie_url"

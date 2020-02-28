@@ -1,0 +1,12 @@
+type: custom:auto-entities
+card:
+  type: entities
+  title: Kommende begivenheder
+  show_header_toggle: false
+filter:
+  include:
+    - domain: sensor
+      name: "*dag"
+sort:
+  method: state
+  numeric: true

@@ -1,0 +1,5 @@
+ha_slave:
+  title: "Home Assistant Slave"
+  url: "https://ha-slave.skovtrolden.duckdns.org"
+  require_admin: true
+  icon: mdi:home-assistant

@@ -1,0 +1,5 @@
+portainer:
+  title: "Portainer"
+  url: "https://portainer.skovtrolden.duckdns.org"
+  require_admin: true
+  icon: mdi:docker

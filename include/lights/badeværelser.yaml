@@ -1,0 +1,26 @@
+- platform: group
+  name: Badeværelse, lille
+  entities:
+    - light.spejl_lille_badevaerelse
+    - light.skabe_lille_badevaerelse
+    - light.handklaedetorrer_lille_badevaerelse
+    - light.dor_lille_badevaerelse
+    - light.toilet_lille_badevaerelse
+    - light.bruser_lille_badevaerelse
+
+- platform: group
+  name: Badeværelse, stort
+  entities:
+    - light.spejl_stort_badevaerelse
+    - light.skabe_stort_badevaerelse
+    - light.badekar_stort_badevaerelse
+    - light.handklaedetorrer_stort_badevaerelse
+    - light.dor_stort_badevaerelse
+    - light.toilet_stort_badevaerelse
+    - light.bruser_stort_badevaerelse
+
+- platform: group
+  name: Badeværelser, samlet
+  entities:
+    - light.badevaerelse_lille
+    - light.badevaerelse_stort

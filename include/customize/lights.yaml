@@ -1,0 +1,94 @@
+# Køkken
+light.spisebord:
+  icon: mdi:ceiling-light
+light.kaffebar:
+  icon: mdi:ceiling-light
+light.kokkeno:
+  icon: mdi:ceiling-light
+light.kokkenskabe:
+  icon: mdi:ceiling-light
+light.kokkenbord:
+  icon: mdi:ceiling-light
+light.maleri_kokken:
+  icon: mdi:image-filter-frames
+light.legekokken:
+  icon: mdi:fridge-outline
+
+# Hjaltes værelse
+light.hjaltes_loftslampe:
+  friendly_name: Loftlamper
+  icon: mdi:track-light
+
+# Stuen
+light.stuelampe:
+  icon: mdi:lamp
+light.gulvlampe:
+  icon: mdi:floor-lamp
+light.lyset_i_reolen:
+  icon: mdi:mushroom
+light.konsolbord:
+  icon: mdi:spotlight
+light.laeselampe:
+  icon: mdi:floor-lamp
+switch.sofaen:
+  icon: mdi:sofa
+
+# Badeværelser
+light.badevaerelse_lille:
+  friendly_name: Lille
+  icon: mdi:shower-head
+light.badevaerelse_stort:
+  friendly_name: Stort
+  icon: mdi:shower
+
+# Cornelies værelse
+light.cornelies_gulvlampe:
+  friendly_name: Gulvlampe
+  icon: mdi:floor-lamp
+
+# Nathalies værelse
+light.nathalies_loftslamper:
+  friendly_name: Loftslamper
+  icon: mdi:ceiling-light
+light.nathalies_sengelamper:
+  friendly_name: Sengelamper
+  icon: mdi:hotel
+
+# Gangarealer og havegang
+light.lys_over_skabe:
+  icon: mdi:led-strip
+light.loftlampe_i_indgang:
+  icon: mdi:track-light
+light.havegang:
+  icon: mdi:wall-sconce-flat
+light.gangen:
+  icon: mdi:track-light
+
+# Emilios værelse
+light.emilios_loftlampe:
+  friendly_name: Loftlampe
+  icon: mdi:ceiling-light
+
+# Colins værelse
+light.colins_lampe:
+  friendly_name: Lampe
+  icon: mdi:lamp
+light.colins_loftlampe:
+  friendly_name: Loftlampe
+  icon: mdi:ceiling-light
+light.colins_manelampe:
+  friendly_name: Månelampe
+  icon: mdi:weather-night
+
+# Kontor
+light.sandbox_light_2:
+  icon: mdi:lamp
+
+# Pigernes stue
+light.lys_i_reol_2:
+  icon: mdi:flash-circle
+
+# Legeværelse
+light.gulvlampe_i_legevaerelse:
+  friendly_name: Gulvlampe
+  icon: mdi:floor-lamp-dual

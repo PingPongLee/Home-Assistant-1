@@ -1,0 +1,35 @@
+title: Media
+icon: mdi:youtube
+cards:
+  - type: custom:vertical-stack-in-card
+    cards:
+      - type: custom:auto-entities
+        card:
+          type: entities
+          title: Aktive medieafspillere
+          show_header_toggle: false
+        filter:
+          include:
+            - domain: media_player
+            - state: "playing"
+            - state: "paused"
+              options:
+                type: custom:mini-media-player
+                entity: this.entity_id
+                artwork: full-cover
+
+      - type: custom:auto-entities
+        card:
+          type: custom:fold-entity-row
+          head: 
+            type: section
+            label: Inaktive medieafspillere
+        filter:
+          include:
+            - domain: media_player
+              options:
+                type: custom:mini-media-player
+                entity: this.entity_id
+          exclude:
+            - state: "playing"
+            - state: "paused"

@@ -1,0 +1,17 @@
+- platform: ping
+  host: 192.168.0.120
+  name: "Jacobs PC"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.0.162
+  name: "Hjaltes PC"
+  count: 2
+  scan_interval: 30
+
+- platform: ping
+  host: 192.168.0.110
+  name: "TV i stuen"
+  count: 2
+  scan_interval: 30

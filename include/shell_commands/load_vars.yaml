@@ -1,0 +1,1 @@
+var_set_values: "source /config/custom_components/shell/tools.sh; var_set_values include/var/values"

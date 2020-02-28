@@ -1,0 +1,45 @@
+# lovelace_gen
+{% macro ink_level(entity, color) -%}
+      - type: custom:bar-card
+        entity: {{ entity }}
+        direction: right
+        title_position: 'off'
+        color: {{ color }}
+        show_value: "false"
+        height: 2vh
+        width: 70%
+{%- endmacro %}
+
+type: custom:vertical-stack-in-card
+title: Printer og Scanner
+cards:
+  - type: horizontal-stack
+    cards:
+      - entity: sensor.hp_3830_status_template
+        type: custom:multiple-entity-row
+        name: HP 3830
+        hide_state: true
+      {{ ink_level("sensor.hp_3830_inkcartridge_black", "black") }}
+
+  - type: horizontal-stack
+    cards:
+      - entity: sensor.hp_3830_printer
+        type: custom:multiple-entity-row
+        name: Printer
+        icon: mdi:file
+        unit: "sider"
+      {{ ink_level("sensor.hp_3830_inkcartridge_cyanmagentayellow", "cyan") }}
+
+  - type: horizontal-stack
+    cards:
+      - entity: sensor.hp_3830_scanner
+        type: custom:multiple-entity-row
+        name: Scanner
+        icon: mdi:scanner
+        unit: "sider"
+      {{ ink_level("sensor.hp_3830_inkcartridge_cyanmagentayellow", "magenta") }}
+
+  - type: horizontal-stack
+    cards:
+      - type: custom:gap-card
+      {{ ink_level("sensor.hp_3830_inkcartridge_cyanmagentayellow", "yellow") }}

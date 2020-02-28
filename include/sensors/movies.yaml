@@ -1,0 +1,5 @@
+#- platform: template
+#  sensors:
+#    movie_poster:
+#      value_template: "{{ states('input_select.movie_covers_url') }}"
+#      entity_picture_template: "{{ states('input_select.movie_covers_url') }}"

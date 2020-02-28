@@ -1,0 +1,65 @@
+# lovelace_gen
+{% macro slider_fold(entity, i) -%}
+      - type: custom:slider-entity-row
+        hide_state: true
+        toggle: true
+        name: {{ i }}
+        entity: {{ entity }}{{ i }}
+{%- endmacro %}
+
+type: entities
+title: Køkken
+show_header_toggle: false
+entity: light.kokken
+entities:
+  - type: custom:fold-entity-row
+    head:
+      type: custom:slider-entity-row
+      toggle: true
+      entity: light.spisebord
+    items:
+      {{ slider_fold("light.spisebord_", 1) }}
+      {{ slider_fold("light.spisebord_", 2) }}
+
+  - type: divider
+  - type: custom:fold-entity-row
+    head:
+      type: custom:slider-entity-row
+      toggle: true
+      entity: light.kaffebar
+    items:
+      {{ slider_fold("light.kaffebar_", 1) }}
+      {{ slider_fold("light.kaffebar_", 2) }}
+
+  - type: divider
+  - type: custom:fold-entity-row
+    head:
+      type: custom:slider-entity-row
+      toggle: true
+      entity: light.kokkeno
+    items:
+      {{ slider_fold("light.kokkeno_", 1) }}
+      {{ slider_fold("light.kokkeno_", 2) }}
+      {{ slider_fold("light.kokkeno_", 3) }}
+
+  - type: divider
+  - type: custom:fold-entity-row
+    head:
+      type: custom:slider-entity-row
+      toggle: true
+      entity: light.kokkenbord
+    items:
+      {{ slider_fold("light.kokkenbord_", 1) }}
+      {{ slider_fold("light.kokkenbord_", 2) }}
+  - type: custom:slider-entity-row
+    toggle: true
+    entity: light.kokkenskabe
+
+  - type: divider
+  - type: custom:slider-entity-row
+    toggle: true
+    entity: light.maleri_kokken
+  - type: custom:slider-entity-row
+    toggle: true
+    entity: light.legekokken
+

@@ -1,0 +1,24 @@
+title: Kalendere
+icon: mdi:calendar
+panel: false
+cards:
+  - type: custom:atomic-calendar
+    title: Plejefamilie
+    entities:
+      - calendar.plejefamilie
+    showDescription: true
+    untilText: 'indtil'
+
+  - type: custom:atomic-calendar
+    title: Jacob
+    entities:
+      - calendar.jacob_lindvig_gmail_com
+    showDescription: true
+
+  - type: custom:atomic-calendar
+    title: Rikke
+    entities:
+      - calendar.rikke_lindvig_henriksen_gmail_com
+    showDescription: true
+    untilText: 'indtil'
+

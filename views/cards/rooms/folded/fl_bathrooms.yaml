@@ -1,0 +1,40 @@
+# lovelace_gen
+{% macro slider_fold(entity, name) -%}
+      - type: custom:slider-entity-row
+        toggle: false
+        hide_state: true
+        name: {{ name }}
+        entity: {{ entity }}
+{%- endmacro %}
+
+title: Badeværelser
+type: entities
+show_header_toggle: false
+entities:
+  - type: custom:fold-entity-row
+    head:
+      type: custom:slider-entity-row
+      toggle: true
+      entity: light.badevaerelse_lille
+    items:
+      {{ slider_fold("light.dor_lille_badevaerelse", "Dør") }}
+      {{ slider_fold("light.handklaedetorrer_lille_badevaerelse", "Håndklædetørrer") }}
+      {{ slider_fold("light.toilet_lille_badevaerelse", "Toilet") }}
+      {{ slider_fold("light.skabe_lille_badevaerelse", "Skabe") }}
+      {{ slider_fold("light.spejl_lille_badevaerelse", "Spejl") }}
+      {{ slider_fold("light.bruser_lille_badevaerelse", "Bruser") }}
+
+  - type: divider
+  - type: custom:fold-entity-row
+    head:
+      type: custom:slider-entity-row
+      toggle: true
+      entity: light.badevaerelse_stort
+    items:
+      {{ slider_fold("light.dor_stort_badevaerelse", "Dør") }}
+      {{ slider_fold("light.handklaedetorrer_stort_badevaerelse", "Håndklædetørrer") }}
+      {{ slider_fold("light.badekar_stort_badevaerelse", "Badekar") }}
+      {{ slider_fold("light.toilet_stort_badevaerelse", "Toilet") }}
+      {{ slider_fold("light.skabe_stort_badevaerelse", "Skabe") }}
+      {{ slider_fold("light.spejl_stort_badevaerelse", "Spejl") }}
+      {{ slider_fold("light.bruser_stort_badevaerelse", "Bruser") }}

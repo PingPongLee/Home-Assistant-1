@@ -1,0 +1,38 @@
+- platform: template
+  sensors:
+    affald_hentes:
+      friendly_name: "Affald:"
+      value_template: >-
+        {% if states('sensor.affald') <= states('sensor.affald_sommer') %}
+          {% set days = state_attr('sensor.affald', 'days') %}
+          {% set next_date = state_attr('sensor.affald', 'next_date') %}
+        {%- else -%}
+          {% set days = state_attr('sensor.affald_sommer', 'days') %}
+          {% set next_date = state_attr('sensor.affald_sommer', 'next_date') %}
+        {%- endif -%}
+
+        {% if days == 0 %}
+          i dag
+        {%- elif days == 1 %}
+          i morgen
+        {%- else -%}
+          {% set time_stamp = as_timestamp(next_date | regex_replace(":[0-9][0-9][0-9].*$","")) %}
+            om {{ ((time_stamp - as_timestamp(now())) / ( 60 * 60 * 24 )) | round(0, 'ceil') }} dage (
+          {{- states("var.weekdays_dk").split(",")[time_stamp | timestamp_custom('%w') | int - 1] }}dag den {{ time_stamp | timestamp_custom('%-d.') }} {{ states("var.months_dk").split(",")[time_stamp | timestamp_custom('%-m') | int - 1] }})
+        {%- endif -%}
+
+    genbrug_hentes:
+      friendly_name: "Genbrug:"
+      value_template: >-
+        {% set days = state_attr('sensor.genbrug', 'days') %}
+        {% set next_date = state_attr('sensor.genbrug', 'next_date') %}
+
+        {% if days == 0 %}
+          i dag
+        {%- elif days == 1 %}
+          i morgen
+        {%- else -%}
+          {% set time_stamp = as_timestamp(next_date | regex_replace(":[0-9][0-9][0-9].*$","")) %}
+          om {{ ((time_stamp - as_timestamp(now())) / ( 60 * 60 * 24 )) | round(0, 'ceil') }} dage (
+          {{- states("var.weekdays_dk").split(",")[time_stamp | timestamp_custom('%w') | int - 1] }}dag den {{ time_stamp | timestamp_custom('%-d.') }} {{ states("var.months_dk").split(",")[time_stamp | timestamp_custom('%-m') | int - 1] }})
+        {%- endif -%}

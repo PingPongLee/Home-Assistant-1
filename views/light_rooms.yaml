@@ -1,0 +1,87 @@
+# lovelace_gen
+
+{% set rooms = {
+"Køkken":[ ["light.spisebord", "light.maleri_kokken", "light.legekokken", "light.kaffebar"], ["light.kokkeno", "", "light.kokkenskabe", "light.kokkenbord"] ],
+"Stuen":[ ["light.gulvlampe", "light.stuelampe", "light.lyset_i_reolen", "light.laeselampe"] ],
+"Legeværelse": [ ["light.uplight", "light.gulvlampe_i_legevaerelse"] ],
+"Gangen": [ ["light.gangen"] ],
+"Hjalte": [ ["light.hjaltes_loftslampe", "light.nanoleaf"] ],
+"Emilio": [ ["light.emilios_loftlampe"] ],
+"Colin": [ ["light.colins_lampe", "light.colins_loftlampe", "light.colins_manelampe"] ],
+"Pigernes stue": [ ["light.lys_i_reol_pigernes_stue"] ],
+"Cornelie": [ ["light.cornelies_gulvlampe"] ],
+"Nathalie": [ ["light.nathalies_loftslamper", "light.nathalies_sengelamper"] ],
+"Badeværelser": [ ["light.badevaerelse_lille", "light.badevaerelse_stort"] ],
+"Indgang": [ ["light.loftlampe_i_indgang", "", "light.lys_over_skabe"] ],
+"Havegang": [ ["light.havegang"] ]
+} %}
+
+title: Lys
+icon: mdi:lightbulb-on
+panel: true
+cards:
+  - type: custom:layout-card
+    layout: vertical
+    column_num: 5
+    max_columns: 5
+    max_width: [31.9%,35.3%,31.9%]
+    cards:
+      - !include
+        - cards/rooms/buttons.yaml
+        - entities: {{ rooms["Hjalte"] }}
+          title: Hjaltes værelse
+      - !include
+        - cards/rooms/buttons.yaml
+        - entities: {{ rooms["Colin"] }}
+          title: Colins værelse
+      - type: horizontal-stack
+        cards:
+          - !include
+            - cards/rooms/buttons.yaml
+            - entities: {{ rooms["Emilio"] }}
+              title: Emilios værelse
+          - !include
+            - cards/rooms/buttons.yaml
+            - entities: {{ rooms["Cornelie"] }}
+              title: Cornelies værelse
+      - break
+
+      - !include
+        - cards/rooms/buttons.yaml
+        - entities: {{ rooms["Køkken"] }}
+          title: Køkken
+      - !include
+        - cards/rooms/buttons.yaml
+        - entities: {{ rooms["Stuen"] }}
+          title: Stuen
+      - type: horizontal-stack
+        cards:
+          - !include
+            - cards/rooms/buttons.yaml
+            - entities: {{ rooms["Badeværelser"] }}
+              title: Badeværelser
+          - !include
+            - cards/rooms/buttons.yaml
+            - entities: {{ rooms["Legeværelse"]}}
+              title: Legeværelse
+      - break
+
+      - !include
+        - cards/rooms/buttons.yaml
+        - entities: {{ rooms["Nathalie"] }}
+          title: Nathalies værelse
+      - !include
+        - cards/rooms/buttons.yaml
+        - entities: {{ rooms["Indgang"] }}
+          title: Indgang
+      - type: horizontal-stack
+        cards:
+          - !include
+            - cards/rooms/buttons.yaml
+            - entities: {{ rooms["Havegang"] }}
+              title: Havegang
+          - !include
+            - cards/rooms/buttons.yaml
+            - entities: {{ rooms["Gangen"] }}
+              title: Gangen
+      - break

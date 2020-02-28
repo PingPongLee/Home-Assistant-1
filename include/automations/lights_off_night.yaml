@@ -1,0 +1,27 @@
+# Turn off forgotten light at night
+- alias: "Sluk tændt lys om natten"
+  trigger:
+    # List of rooms to track
+    platform: state
+    entity_id:
+      - group.kokken
+    from: "off"
+    to: "on"
+    # timeout from GUI
+    for:
+      minutes: "{{ states('input_number.timeout_night') | int }}"
+  # Only turn off lights if it is night
+  # Get start and end time from GUI
+  condition:
+    - condition: template
+      value_template: >-
+        {{ states('sensor.time') >= (state_attr("input_datetime.night_start_time", "timestamp") | int | timestamp_custom('%H:%M', false)) }}
+    - condition: template
+      value_template: >-
+        {{ states('sensor.time') <= (state_attr("input_datetime.night_end_time", "timestamp") | int | timestamp_custom('%H:%M', false)) }}
+
+  action:
+    service: light.turn_off
+    # Turn off the light that was the trigger
+    data_template:
+      entity_id: "{{ trigger.entity_id }}"

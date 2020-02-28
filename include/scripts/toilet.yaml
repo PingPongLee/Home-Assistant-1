@@ -1,0 +1,16 @@
+# Announce when done at toilet
+toilet_done:
+  alias: "Færdig på toilet"
+  sequence:
+    - service: tts.google_translate_say
+      entity_id: media_player.kokken
+      data_template:
+        message: >-
+          "{{ states('var.toilet_string') }}"
+
+    # Loop the script
+    - service: script.loop
+      data_template:
+        delay: >-
+          {{ delay }}
+        caller: "script.toilet_done"

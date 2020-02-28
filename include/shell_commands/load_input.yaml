@@ -1,0 +1,2 @@
+select_set_options: "source /config/custom_components/shell/tools.sh; select_set_options include/input/select/lists"
+text_set_values: "source /config/custom_components/shell/tools.sh; text_set_values include/input/text/values"

@@ -1,0 +1,6 @@
+# lovelace_gen
+type: custom:slider-entity-row
+hide_state: true
+toggle: true
+name: {{ name }}
+entity: {{ entity }}

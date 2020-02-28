@@ -1,0 +1,15 @@
+dim_high:
+  name: Normal lysstyrke
+  icon: mdi:car-light-high
+  initial: 255
+  min: 1
+  max: 255
+  step: 1
+
+dim_low:
+  name: Laveste lysstyrke
+  icon: mdi:car-light-dimmed
+  initial: 10
+  min: 1
+  max: 255
+  step: 1

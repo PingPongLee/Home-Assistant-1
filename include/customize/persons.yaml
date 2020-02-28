@@ -1,0 +1,10 @@
+person.jacob:
+  entity_picture: https://graph.facebook.com/1222707029/picture?type=large
+person.rikke:
+  entity_picture: https://graph.facebook.com/1194766185/picture?type=large
+person.cornelie:
+  entity_picture: /local/images/user_female.png
+person.nathalie:
+  entity_picture: https://graph.facebook.com/100010724498055/picture?type=large
+person.hjalte:
+  entity_picture: /local/images/user_boy.png

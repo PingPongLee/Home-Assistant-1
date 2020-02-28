@@ -1,0 +1,21 @@
+title: Nathalie
+type: entities
+show_header_toggle: true
+entities:
+  - type: custom:fold-entity-row
+    head:
+      type: custom:slider-entity-row
+      toggle: false
+      hide_state: true
+      entity: light.nathalies_loftslamper
+    items:
+      - type: custom:slider-entity-row
+        toggle: false
+        hide_state: true
+        entity: light.nathalies_loftslampe_hoj
+      - type: custom:slider-entity-row
+        toggle: false
+        hide_state: true
+        entity: light.nathalies_loftslampe_lav
+
+  - light.nathalies_sengelamper

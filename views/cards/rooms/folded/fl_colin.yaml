@@ -1,0 +1,10 @@
+title: Colin
+type: entities
+show_header_toggle: false
+entities:
+  - type: custom:slider-entity-row
+    toggle: true
+    entity: light.colins_lampe
+  - type: custom:slider-entity-row
+    toggle: true
+    entity: light.colins_loftlampe

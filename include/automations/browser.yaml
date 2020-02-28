@@ -1,0 +1,11 @@
+- alias: "TouchPanel default tab"
+  trigger:
+    platform: template
+    value_template: "{{ not is_state_attr('sensor.touchpanel', 'path', '/lovelace/0') }}"
+    for: "00:00:30"
+
+  action:
+    service: browser_mod.navigate
+    data:
+      navigation_path: /lovelace/0
+      deviceID: TouchPanel

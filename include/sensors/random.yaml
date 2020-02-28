@@ -1,0 +1,4 @@
+- platform: random
+  name: "Udsæt scripts"
+  minimum: 120
+  maximum: 240

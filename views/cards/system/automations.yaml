@@ -1,0 +1,15 @@
+type: entities
+title: Automatiseringer
+show_header_toggle: false
+entities:
+  - type: custom:toggle-lock-entity-row
+    entity: automation.sluk_alt_lys_nar_huset_er_tomt
+  - type: custom:toggle-lock-entity-row
+    entity: automation.sluk_lyset_pa_et_vaerelse_nar_nogen_er_gaet
+  - type: section
+    label: Detail lysstyring
+  - !include automations/arrive_night.yaml
+  - !include automations/light_control.yaml
+  - !include automations/light_off_rooms.yaml
+  - !include automations/patio.yaml
+  - !include automations/night_light.yaml
