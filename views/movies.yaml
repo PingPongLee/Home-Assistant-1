@@ -1,20 +1,5 @@
 title: Film
 icon: mdi:library-movie
-panel: true
+#panel: true
 cards:
-  - type: custom:layout-card
-    layout: vertical
-    column_num: 4
-    max_columns: 4
-    max_width: [24%,25%,25%,25%]
-    cards:
-
-      - type: custom:card-templater
-        entities:
-          - input_select.movie
-        card:
-          type: picture
-          image_template: "/local/images/covers/{{ states('input_select.movie') }}.jpg"
-
-      - break
-      - !include cards/movies.yaml
+  - !include cards/movies.yaml

@@ -1,10 +1,10 @@
 # Turn in patio light at night and off at specified time
 - alias: "Havegang - aftenlys"
   trigger:
-    # Trigger to turn on - degress below horizo
+    # Trigger to turn on - degress below horizon
     - platform: template
       value_template: >-
-        state_attr('sun.sun', 'elevation') <= (0 - states('input_number.sun_elevation_light') | float )
+        {{ state_attr('sun.sun', 'elevation') <= (0 - states('input_number.sun_elevation_light') | float ) }}
 
     # Trigger to turn off - time
     - platform: template

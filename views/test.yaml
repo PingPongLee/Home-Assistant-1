@@ -5,28 +5,12 @@ cards:
 
 #  - !include cards/system/to_do_in_ha.yaml
 
-  - type: custom:gui-sandbox
+#  - type: custom:gui-sandbox
 
-  - !include cards/system/log_level.yaml
+#  - !include cards/system/log_level.yaml
+
+  - !include cards/movies_new.yaml
 
 #  - !include cards/system/windy.yaml
 
-  - !include cards/events.yaml
-
-  - type: horizontal-stack
-    title: Kitchen
-    cards:
-      - type: light
-        entity: light.spisebord
-      - type: light
-        entity: light.kaffebar
-
-  - type: custom:vertical-stack-in-card
-    title: Kitchen
-    cards:
-      - type: horizontal-stack
-        cards:
-          - type: light
-            entity: light.spisebord
-          - type: light 
-            entity: light.kaffebar
+#  - !include cards/events.yaml

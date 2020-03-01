@@ -9,6 +9,38 @@ cards:
     cards:
 
       - type: entity-button
+        entity: input_select.movie
+        icon: mdi:chevron-left-box
+        show_name: false
+        tap_action:
+          action: call-service
+          service: input_select.select_previous
+          service_data:
+            entity_id: input_select.movie
+
+      - type: custom:card-templater
+        entities:
+          - input_select.movie
+        card:
+          type: picture
+          image_template: "/local/images/covers/{{ states('input_select.movie') }}.jpg"
+
+      - type: entity-button
+        entity: input_select.movie
+        icon: mdi:chevron-right-box
+        show_name: false
+        tap_action:
+          action: call-service
+          service: input_select.select_next
+          service_data:
+            entity_id: input_select.movie
+
+  - type: horizontal-stack
+    cards:
+
+      - type: custom:gap-card
+
+      - type: entity-button
         entity: script.play_pause_movie
         icon: mdi:play-pause
         show_name: false
