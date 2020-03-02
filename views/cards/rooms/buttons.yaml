@@ -27,7 +27,7 @@ cards:
         hide_state: true
       {% else %}
       - type: custom:gap-card
-        height: 1  
+        height: 1
         size: 1
       {% endif %}
     {% endfor %}

@@ -3,8 +3,8 @@
       - type: custom:state-attribute-element
         entity: {{ entity }}
         attribute: {{ attribute }}
-        {% if prefix | length > 0 -%}prefix: "{{ prefix }}: "{%- endif %}
-        {% if suffix | length > 0 -%}suffix: " {{ suffix }}"{%- endif %}
+        {% if prefix | length -%}prefix: "{{ prefix }}: "{%- endif %}
+        {% if suffix | length -%}suffix: " {{ suffix }}"{%- endif %}
         style:
           top: {{ top }}
           {{ side }}: {{ x }}
@@ -58,7 +58,6 @@
                   full_row: true
                   hide_state: true
 {%- endmacro %}
-
 
 {% macro top_icon(type, entity_or_icon, x) -%}
       - type: {{ type }}

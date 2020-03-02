@@ -9,7 +9,7 @@ cards:
 
 #  - !include cards/system/log_level.yaml
 
-  - !include cards/movies_new.yaml
+#  - !include cards/movies_new.yaml
 
 #  - !include cards/system/windy.yaml
 
