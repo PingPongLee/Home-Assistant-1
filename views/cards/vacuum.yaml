@@ -10,13 +10,13 @@
           {{ side }}: {{ x }}
           color: '#ffffff'
           transform: translate(0%,-50%)
-          font-size: 1.2vw
+          font-size: 2.4vh
           font-weight: bold
           text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black
           border-{{ side }}-style: solid
           border-color: '#222222'
           padding-{{ side }}: 0.5vw
-          line-height: 3vw
+          line-height: 6vh
 {%- endmacro %}
 
 {% macro vacuum_button_bottom(icon, x, service, entity) -%}

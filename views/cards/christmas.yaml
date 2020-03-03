@@ -6,14 +6,14 @@ elements:
     style:
       top: 33%
       left: 50%
-      font-size: 2vw
+      font-size: 4vh
       color: black
   - type: state-label
     entity: sensor.dage_til_jul
     style:
       top: 53%
       left: 50%
-      font-size: 6vw
+      font-size: 7vh
       color: black
 
 

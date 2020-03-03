@@ -1,5 +1,4 @@
 title: Film
 icon: mdi:library-movie
-#panel: true
 cards:
   - !include cards/movies.yaml

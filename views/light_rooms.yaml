@@ -22,8 +22,7 @@ panel: true
 cards:
   - type: custom:layout-card
     layout: vertical
-    column_num: 5
-    max_columns: 5
+    max_columns: 3
     max_width: [31.9%,35.3%,31.9%]
     cards:
       - !include

@@ -6,12 +6,12 @@ elements:
     style:
       top: 40%
       left: 50%
-      font-size: 7vw
+      font-size: 10vh
       color: white
   - type: state-label
     entity: sensor.dato
     style:
       top: 85%
       left: 50%
-      font-size: 2vw
+      font-size: 4vh
       color: white

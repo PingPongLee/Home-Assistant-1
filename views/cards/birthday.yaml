@@ -15,21 +15,21 @@ elements:
     entity: sensor.next_birthday
     attribute: friendly_name
     style:
-      {{ element_style("15%", "50%", "1.8vw") }}
+      {{ element_style("15%", "50%", "4vh") }}
 
   - type: custom:state-attribute-element
     entity: sensor.next_birthday
     attribute: years_at_next_anniversary
     suffix: " år"
     style:
-      {{ element_style("33%", "50%", "2vw") }}
+      {{ element_style("33%", "50%", "5vh") }}
 
   - type: state-label
     entity: sensor.next_birthday
     prefix: "om "
     suffix: " dage"
     style:
-      {{ element_style("60%", "50%", "4vw") }}
+      {{ element_style("60%", "50%", "7vh") }}
     tap_action:
       action: call-service
       service: browser_mod.popup
