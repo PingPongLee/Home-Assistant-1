@@ -14,8 +14,7 @@
     - service: shell_command.select_set_options
     - service: shell_command.var_set_values
 
-    - service: script.refresh_movies
-    - service: script.refresh_covers
+    - service: script.load_movies
 
     - service: vacuum.set_fan_speed
       data_template:

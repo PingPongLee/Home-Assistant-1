@@ -10,3 +10,8 @@
       data:
         haystack: "input_select.movie"
         result_list: "input_select.movie_url"
+
+    - service: script.vlookup
+      data:
+        haystack: "input_select.movie"
+        result_list: "input_select.movie_cover"

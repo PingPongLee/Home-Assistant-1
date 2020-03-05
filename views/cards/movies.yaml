@@ -7,10 +7,10 @@ cards:
 
   - type: custom:card-templater
     entities:
-      - input_select.movie
+      - input_select.movie_cover
     card:
       type: picture-elements
-      image_template: "/local/images/covers/{{ states('input_select.movie') }}.jpg"
+      image_template: "/local/{{ states('input_select.movie_cover') }}"
       elements:
         - !include
           - movies_element.yaml
@@ -40,9 +40,9 @@ cards:
           service: script.stop_movie
 
       - type: entity-button
-        entity: script.refresh_movies
+        entity: script.load_movies
         icon: mdi:reload
         show_name: false
         tap_action:
           action: call-service
-          service: script.refresh_movies
+          service: script.load_movies

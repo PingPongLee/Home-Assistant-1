@@ -14,7 +14,7 @@ movie_url:
 #  options:
 #    - DUMMY
 
-#movie_covers_url:
-#  name: "Movie Covers URL"
-#  options:
-#    - DUMMY
+movie_cover:
+  name: "Movie Covers URL"
+  options:
+    - DUMMY
